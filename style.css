@@ -1,0 +1,330 @@
+/* â”€â”€ Fonts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap');
+
+/* â”€â”€ Root variables â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+:root {
+    --bg: #0D1117;
+    --bg-surface: #161B22;
+    --bg-surface-2: #1C2330;
+    --border: rgba(255, 255, 255, 0.06);
+    --border-accent: rgba(44, 123, 229, 0.3);
+    --text-primary: #C8D6E5;
+    --text-secondary: #8B9AAD;
+    --text-muted: #4A5568;
+    --accent-blue: #2C7BE5;
+    --accent-teal: #00B4A0;
+    --red: #E8473F;
+    --amber: #F5A623;
+    --green: #4A9D6F;
+    --font-mono: 'DM Mono', monospace;
+    --font-display: 'Syne', sans-serif;
+}
+
+/* â”€â”€ Global reset â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.stApp {
+    background-color: var(--bg) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+}
+
+.stApp > header { background: transparent !important; }
+[data-testid="stSidebar"] { background-color: var(--bg-surface) !important; border-right: 1px solid var(--border) !important; }
+[data-testid="stSidebar"] * { color: var(--text-secondary) !important; font-family: var(--font-mono) !important; }
+
+/* â”€â”€ Sidebar components â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+.sidebar-logo {
+    font-size: 28px;
+    color: var(--accent-blue) !important;
+    line-height: 1;
+}
+.sidebar-title {
+    font-family: var(--font-display) !important;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary) !important;
+    line-height: 1.3;
+}
+.sidebar-title span {
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--text-muted) !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.sidebar-label {
+    font-size: 9px !important;
+    letter-spacing: 0.15em !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    margin: 0 0 8px 0 !important;
+}
+.sidebar-meta {
+    font-size: 10px !important;
+    color: var(--text-muted) !important;
+    margin: 2px 0 !important;
+    line-height: 1.4 !important;
+}
+.sidebar-about { margin-top: 8px; }
+
+/* â”€â”€ Dashboard header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.dashboard-header {
+    padding: 24px 0 16px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+}
+.dashboard-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 800;
+    color: #E8F0FE;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.02em;
+}
+.logo-hex {
+    color: var(--accent-blue);
+    font-size: 22px;
+}
+.dashboard-subtitle {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+    font-style: italic;
+}
+
+/* â”€â”€ KPI cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.kpi-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+}
+.kpi-card:hover { border-color: var(--border-accent); }
+.kpi-label {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+.kpi-value {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: #E8F0FE;
+    line-height: 1;
+}
+.kpi-delta {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* â”€â”€ Section labels â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.section-label {
+    font-size: 9px !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    margin-bottom: 10px !important;
+}
+
+/* â”€â”€ Issue table â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-top: 8px;
+}
+.issue-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    font-family: var(--font-mono);
+}
+.issue-table thead tr {
+    background: var(--bg-surface-2);
+    border-bottom: 1px solid var(--border);
+}
+.issue-table th {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+}
+.issue-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+.issue-table tbody tr:last-child { border-bottom: none; }
+.issue-table tbody tr:hover { background: var(--bg-surface); }
+.issue-table td {
+    padding: 10px 12px;
+    vertical-align: top;
+    color: var(--text-secondary);
+}
+
+.issue-title { max-width: 380px; }
+.issue-link {
+    color: var(--text-primary) !important;
+    text-decoration: none !important;
+    font-weight: 400;
+    display: block;
+    line-height: 1.4;
+}
+.issue-link:hover { color: var(--accent-blue) !important; }
+.issue-one-line {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    line-height: 1.4;
+    font-style: italic;
+}
+.theme-cell {
+    font-size: 11px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    max-width: 160px;
+}
+.meta-cell {
+    font-size: 11px;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* â”€â”€ Badges â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+.sev-high { background: rgba(232, 71, 63, 0.15); color: var(--red); border: 1px solid rgba(232,71,63,0.3); }
+.sev-medium { background: rgba(245, 166, 35, 0.15); color: var(--amber); border: 1px solid rgba(245,166,35,0.3); }
+.sev-low { background: rgba(74, 157, 111, 0.15); color: var(--green); border: 1px solid rgba(74,157,111,0.3); }
+
+.badge-outline {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.sent-negative { color: var(--red); }
+.sent-positive { color: var(--green); }
+.sent-neutral { color: var(--text-muted); }
+
+/* â”€â”€ Q&A section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.qa-subtext {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+.suggested-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.sq-chip {
+    font-size: 11px;
+    padding: 5px 10px;
+    border: 1px solid var(--border-accent);
+    border-radius: 4px;
+    color: var(--accent-blue);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.sq-chip:hover { background: rgba(44, 123, 229, 0.08); }
+
+.qa-entry {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent-blue);
+    border-radius: 6px;
+    padding: 16px;
+    margin-top: 12px;
+}
+.qa-question {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+.qa-answer {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+/* â”€â”€ Empty state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    color: var(--text-muted);
+}
+.empty-icon {
+    font-size: 48px;
+    color: var(--accent-blue);
+    margin-bottom: 16px;
+    opacity: 0.4;
+}
+.empty-state h2 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.empty-state p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* â”€â”€ Streamlit overrides â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.stButton > button {
+    font-family: var(--font-mono) !important;
+    font-size: 11px !important;
+    letter-spacing: 0.05em !important;
+    border-radius: 4px !important;
+}
+.stButton > button[kind="primary"] {
+    background: var(--accent-blue) !important;
+    border-color: var(--accent-blue) !important;
+}
+.stTextInput > div > div > input {
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+    font-size: 13px !important;
+    border-radius: 4px !important;
+}
+.stMultiSelect > div, .stSelectbox > div {
+    background: var(--bg-surface) !important;
+}
+hr { border-color: var(--border) !important; margin: 24px 0 !important; }
